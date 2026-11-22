@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Round 2: one perfect mango — revised entry
 """The picture that tastes of one ingredient.
 
 Entry for the make.fun bounty "The picture that tastes of one ingredient".
