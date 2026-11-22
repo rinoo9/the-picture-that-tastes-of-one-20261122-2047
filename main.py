@@ -3,13 +3,13 @@
 
 Entry for the make.fun bounty "The picture that tastes of one ingredient".
 
-The entry is a single 1024x1024 picture of one perfect strawberry:
-ripe, glossy, and so vivid you can almost taste it before the first bite.
+The entry is a single 1024x1024 picture of one perfect mango:
+ripe, glossy, golden-orange, and so vivid you can almost taste it before the first bite.
 One fruit, one flavour, nothing else on the plate. No garnish, no sauce,
-no second ingredient competing for attention — the strawberry is the
-whole picture, and the whole picture is the strawberry.
+no second ingredient competing for attention — the mango is the
+whole picture, and the whole picture is the mango.
 
-This program is the entry builder. It takes the bundled strawberry.png
+This program is the entry builder. It takes the bundled mango.png
 asset (kept next to this file), verifies it is a 1024x1024 PNG no larger
 than 1 MiB, and copies it byte-for-byte to /output/entry.png.
 Deterministic by construction: the output is an exact copy of the asset.
@@ -20,7 +20,7 @@ import struct
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SOURCE = os.path.join(HERE, "strawberry.png")
+SOURCE = os.path.join(HERE, "mango.png")
 OUTPUT_DIR = "/output"
 OUTPUT_PATH = os.path.join(OUTPUT_DIR, "entry.png")
 
@@ -44,7 +44,7 @@ def main():
     if not os.path.isfile(SOURCE):
         print(
             f"error: bundled asset not found: {SOURCE}\n"
-            "expected strawberry.png next to main.py",
+            "expected mango.png next to main.py",
             file=sys.stderr,
         )
         sys.exit(1)
