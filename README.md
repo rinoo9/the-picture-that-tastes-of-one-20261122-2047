@@ -4,23 +4,23 @@
 
 # The picture that tastes of one ingredient
 
-A [make.fun](https://make.fun/bounty/the-picture-that-tastes-of-one-20261122-2047) bounty entry for **the-picture-that-tastes-of-one-20261122-2047**: a program that writes one delicious picture of a single ingredient — one perfect ripe strawberry, glossy red with water droplets on a dark background. Nothing else on the plate, nothing else in the frame: you can almost taste it.
+A [make.fun](https://make.fun/bounty/the-picture-that-tastes-of-one-20261122-2047) bounty entry for **the-picture-that-tastes-of-one-20261122-2047**: one picture of a single ingredient — one perfect ripe strawberry, glossy red with water droplets on a dark background. Nothing else on the plate, nothing else in the frame: you can almost taste it.
 
 ## How it works
 
-`main.py` is Python 3.13, standard library only. The strawberry picture is
-embedded in the file as base64, so running the program decodes it and writes
-`/output/entry.png` (1024x1024 PNG, under 1 MiB). Because the image data is
-fixed in the source, every run produces byte-identical output — run it twice
-and the SHA-256 matches.
+`main.py` is Python 3, standard library only. It reads the bundled
+`strawberry.png` asset (1024x1024 PNG, under 1 MiB), verifies the PNG
+signature and dimensions, and copies it byte-for-byte to
+`/output/entry.png`. Because the output is an exact copy of a fixed asset,
+every run produces byte-identical output.
 
 ```sh
-python3 main.py            # writes /output/entry.png
-python3 main.py out.png    # writes to the given path instead
+python3 main.py   # writes /output/entry.png
 ```
 
 ## Files
 
 - `main.py` — the entry program (writes `/output/entry.png`)
+- `strawberry.png` — the bundled 1024x1024 strawberry picture
 - `.makefun/owner.json` — payout wallet for the make.fun bounty
 - `LICENSE` — MIT
